@@ -15,6 +15,11 @@ export interface LogEntry {
   type: 'info' | 'success' | 'warning' | 'error';
 }
 
+export interface AgentConfig {
+  ramLimit: number; // MB
+  priority: 'high' | 'normal' | 'low';
+}
+
 export interface Agent {
   id: string;
   name: string;
@@ -27,6 +32,7 @@ export interface Agent {
     cpu: number; // percentage
     ram: number; // MB
   };
+  config: AgentConfig;
 }
 
 export interface SystemMetrics {
